@@ -34,10 +34,22 @@ body {
   line-height: 1.6;
 }
 
-p:hover {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  height: 100%;
+.container {
+  display: grid;
+
+  // min-content => content decides height
+  grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+
+  // 8 column layout
+  // Each column can be at most 14rem wide
+  // Each collumn must has a width of at least `min-content` - take all soft-wrapping opportunities, becoming as small as the longest word
+  grid-template-columns:
+    [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start]
+    repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
+    [center-end] minmax(6rem, 1fr) [full-end];
+
+  & > * {
+    padding: 4rem;
+    font-size: 3rem;
+  }
 }
