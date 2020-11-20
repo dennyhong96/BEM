@@ -11,7 +11,21 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "parcel": "^1.12.4",
+    "autoprefixer": "^10.0.2",
+    "parcel": "^2.0.0-beta.1",
     "sass": "^1.29.0"
+  },
+  "dependencies": {},
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {
+        "overrideBrowserslist": [
+          ">1%",
+          "last 4 versions",
+          "Firefox ESR",
+          "ie >= 9"
+        ]
+      }
+    }
   }
 }
