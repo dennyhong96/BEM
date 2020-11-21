@@ -18,9 +18,6 @@ const modalCloseBtn = $(".modal__close-btn");
 const modalActions = $(".modal__actions");
 const contactBtns = $a(".home__btn");
 const sidebar = $(".sidebar");
-const menuToggle = $(".menu-toggle");
-const mobileMenu = $(".mobile-menu");
-const mobileMenuCloseBtn = $(".mobile-menu__close-btn");
 
 let modalMsgEl;
 
@@ -40,16 +37,6 @@ function init() {
 
   contactBtns.forEach((btn) => {
     btn.addEventListener("click", handleContactRealtor);
-  });
-
-  menuToggle.addEventListener("click", function () {
-    menuToggle.classList.add("menu-toggle--show");
-    mobileMenu.classList.add("mobile-menu--show");
-  });
-
-  mobileMenuCloseBtn.addEventListener("click", function () {
-    menuToggle.classList.remove("menu-toggle--show");
-    mobileMenu.classList.remove("mobile-menu--show");
   });
 
   toggleBackToTopBtn();
