@@ -16,7 +16,10 @@
     "postcss": "^8.1.8",
     "sass": "^1.29.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "core-js": "^3.7.0",
+    "regenerator-runtime": "^0.13.7"
+  },
   "postcss": {
     "plugins": {
       "autoprefixer": {

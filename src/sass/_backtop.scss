@@ -1,0 +1,19 @@
+.back-to-top {
+  position: fixed;
+
+  right: 3rem;
+  bottom: 6rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 2px;
+  z-index: 100;
+  box-shadow: 0 1rem 2.5rem rgba(#000, 0.1);
+
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s;
+
+  svg {
+    height: 3rem;
+    width: 3rem;
+  }
+}

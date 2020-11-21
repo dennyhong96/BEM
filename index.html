@@ -9,10 +9,53 @@
 	<link rel="stylesheet" href="src/sass/main.scss">
 	<link rel="shortcut icon" type="image/png" href="src/img/favicon.png">
 
+	<script defer src='./src/scripts/index.js'></script>
+
 	<title>Nexter | Your home, your freedom</title>
 </head>
 
 <body class="container">
+
+	<!-- Modal -->
+	<div class="overlay"></div>
+	<div class="modal">
+
+		<!-- Close modal button -->
+		<button class="modal__close-btn">
+			<svg>
+				<use xlink:href="./src/img/sprite.svg#icon-close"></use>
+			</svg>
+		</button>
+
+		<!-- Modal message -->
+		<!-- <p class="modal__message">
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur doloremque esse
+			accusamus qui dignissimos voluptate.
+		</p> -->
+
+		<!-- Modal actions -->
+		<div class="modal__actions">
+			<button class="btn modal__actions--cancel">Cancel</button>
+			<button class="btn modal__actions--confirm">Contact</button>
+		</div>
+	</div>
+
+	<!-- Cookies Alert -->
+	<div class="cookies">
+		<p class="cookies__msg">
+			This website uses cookies to monitor the performance of this website and improve user experience.
+		</p>
+		<button class="btn cookies__btn">Accept</button>
+	</div>
+	<!-- Cookies Ends -->
+
+	<!-- Back to top button -->
+	<button class="btn back-to-top hidden">
+		<svg>
+			<use xlink:href="./src/img/sprite.svg#icon-back-top"></use>
+		</svg>
+	</button>
+	<!-- Back to top button Ends -->
 
 	<!-- Sidebar -->
 	<div class="sidebar">

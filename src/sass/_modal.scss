@@ -1,0 +1,82 @@
+.modal {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  padding: 5rem;
+  background-color: $color-grey-light-1;
+  border-radius: 1px;
+  z-index: 120;
+  width: 90%;
+  max-width: 50rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  transform: translate(-50%, calc(-50% - 100px));
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+
+  &__close-btn {
+    align-self: flex-end;
+    background-color: transparent;
+
+    svg {
+      height: 3rem;
+      width: 3rem;
+      color: $color-primary;
+    }
+  }
+
+  &__message {
+    margin: 2.5rem 0;
+    font-size: 1.6rem;
+  }
+
+  &__actions {
+    align-self: stretch;
+    display: flex;
+    justify-content: flex-end;
+
+    &--cancel {
+      padding: 1rem 2rem;
+      text-transform: none;
+      margin-right: 2rem;
+      background-color: lighten(#000, 25);
+      &:hover {
+        background-color: lighten(#000, 30);
+      }
+    }
+
+    &--confirm {
+      padding: 1rem 2rem;
+      text-transform: none;
+    }
+  }
+}
+
+.modal--show {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%);
+}
+
+.overlay {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(#000, 0.5);
+  z-index: 110;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+}
+
+.overlay--show {
+  opacity: 1;
+  visibility: visible;
+}

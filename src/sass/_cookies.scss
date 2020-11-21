@@ -1,0 +1,28 @@
+.cookies {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: $color-grey-light-1;
+  min-height: 5rem;
+  z-index: 100;
+  padding: 1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s;
+
+  &__msg {
+    font-size: 1.5rem;
+    margin-right: 2rem;
+  }
+
+  &__btn {
+    padding: 1rem 2rem;
+    text-transform: none;
+  }
+}
