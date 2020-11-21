@@ -46,12 +46,20 @@ function init() {
   elSlideInObserver();
 
   sidebar.addEventListener("click", handleLinkTo);
+
+  window.addEventListener("hashchange", handleLocationHashChange);
+}
+
+function handleLocationHashChange() {
+  const hash = window.location.hash;
+  const el = document.querySelector(hash);
+  if (!el) return;
+  el.scrollIntoView({ behavior: "smooth" });
 }
 
 function elSlideInObserver() {
   const observer = new IntersectionObserver(
     function (entries, observer) {
-      console.log(entries);
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add("slide-in");
