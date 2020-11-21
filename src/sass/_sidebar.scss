@@ -6,14 +6,31 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
+
+  @media only screen and (max-width: $bp-large) {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    justify-content: flex-end;
+    align-items: center;
+  }
 }
 
 .nav-btn {
   margin-top: 2.5rem;
   background-color: transparent;
   svg {
-    height: 4rem;
-    width: 4rem;
+    height: 5rem;
+    width: 5rem;
     color: $color-grey-light-1;
+  }
+
+  @media only screen and (max-width: $bp-large) {
+    margin-top: 0;
+    margin-right: 2.5rem;
+
+    svg {
+      height: 4rem;
+      width: 4rem;
+    }
   }
 }

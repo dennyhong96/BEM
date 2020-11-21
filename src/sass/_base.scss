@@ -14,6 +14,12 @@ $color-grey-dark-2: #6d5d4b;
 $font-primary: "Nunito", sans-serif;
 $font-display: "Josefin Sans", sans-serif;
 
+// BREAKPOINTS
+$bp-largest: 75em; // 1200px / 16px
+$bp-large: 62.5em; // 1000px / 16px
+$bp-medium: 50em; // 800px / 16px
+$bp-small: 37.5em; // 600px / 16px
+
 *,
 *::before,
 *::after {
@@ -24,7 +30,15 @@ $font-display: "Josefin Sans", sans-serif;
 
 html {
   box-sizing: border-box;
+
+  // 10px / 16px = 62.5% : 1rem = 10px
   font-size: 62.5%;
+
+  // Reduces overall text size
+  @media only screen and (max-width: $bp-largest) {
+    // 1rem = 8px
+    font-size: 50%;
+  }
 }
 
 body {
@@ -67,4 +81,20 @@ button {
     [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start]
     repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
     [center-end] minmax(6rem, 1fr) [full-end];
+
+  // Changes grid defination
+  // Adds a new roll and remove 1st column
+  @media only screen and (max-width: $bp-large) {
+    grid-template-rows: 8rem 80vh min-content 40vw repeat(3, min-content);
+
+    grid-template-columns:
+      [full-start] minmax(6rem, 1fr) [center-start]
+      repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
+      [center-end] minmax(6rem, 1fr) [full-end];
+  }
+
+  // Put realtor into new row
+  @media only screen and (max-width: $bp-medium) {
+    grid-template-rows: 8rem calc(100vh - 8rem);
+  }
 }
