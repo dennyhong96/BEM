@@ -8,29 +8,27 @@ const gen = (type) => document.createElement(type);
 const container = $(".container");
 const cookieBtn = $(".cookies__btn");
 const cookieBanner = $(".cookies");
-
 const backtopButton = $(".back-to-top");
 const headerButton = $(".header__btn");
-
 const featuresSection = $(".features");
 const homesSection = $(".homes");
-
 const modal = $(".modal");
 const overlay = $(".overlay");
 const modalCloseBtn = $(".modal__close-btn");
 const modalActions = $(".modal__actions");
-
 const contactBtns = $a(".home__btn");
-
-window.addEventListener("load", init);
+const sidebar = $(".sidebar");
 
 let modalMsgEl;
+
+window.addEventListener("load", init);
 
 function init() {
   cookieBtn.addEventListener("click", handleCloseCookies);
   backtopButton.addEventListener("click", handleScrollToTop);
   headerButton.addEventListener("click", handleViewProperties);
   modalCloseBtn.addEventListener("click", toggleModal);
+  overlay.addEventListener("click", toggleModal);
   modalActions.addEventListener("click", function (evt) {
     const btn = evt.target.closest(".btn");
     if (!btn) return;
@@ -43,6 +41,8 @@ function init() {
 
   toggleBackToTopBtn();
   showCookiesAlert();
+
+  sidebar.addEventListener("click", handleLinkTo);
 }
 
 function handleCloseCookies() {
@@ -97,15 +97,26 @@ function handleContactRealtor(evt) {
   if (modalMsgEl) modalMsgEl.remove();
 
   // Generate new modal inner message
+  const { realtorName, realtorNumber } = home.dataset;
   const propertyName = home.querySelector(".home__name").textContent;
   const countryName = home.querySelector(".home__location > p").textContent;
   modalMsgEl = gen("p");
-  modalMsgEl.textContent = `Are you sure you want to contact the realtor for ${propertyName} located in ${countryName}?`;
+  modalMsgEl.textContent = `${realtorName} is the realtor of ${propertyName} located in ${countryName}. You can contact him at ${realtorNumber}. Thanks.`;
   modalMsgEl.classList.add("modal__message");
 
   // Render modal
   modalCloseBtn.insertAdjacentElement("afterend", modalMsgEl);
   toggleModal();
+}
+
+function handleLinkTo(evt) {
+  evt.preventDefault();
+
+  const link = evt.target.closest(".nav-btn");
+  if (!link) return;
+
+  const id = link.getAttribute("href");
+  document.querySelector(id).scrollIntoView({ behavior: "smooth" });
 }
 
 function hide(el, duration = 0) {

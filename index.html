@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="src/sass/main.scss">
 	<link rel="shortcut icon" type="image/png" href="src/img/favicon.png">
 
-	<script defer src='./src/scripts/index.js'></script>
+	<script defer type="module" src='./src/scripts/index.js'></script>
 
 	<title>Nexter | Your home, your freedom</title>
 </head>
@@ -59,11 +59,35 @@
 
 	<!-- Sidebar -->
 	<div class="sidebar">
-		<button class="nav-btn">
+		<!-- <button class="nav-btn">
 			<svg>
 				<use xlink:href="./src/img/sprite.svg#icon-menu"></use>
 			</svg>
-		</button>
+		</button> -->
+
+		<a href="#features" class="nav-btn">
+			<svg>
+				<use xlink:href="./src/img/sprite.svg#icon-features"></use>
+			</svg>
+		</a>
+
+		<a href="#stories" class="nav-btn">
+			<svg>
+				<use xlink:href="./src/img/sprite.svg#icon-story"></use>
+			</svg>
+		</a>
+
+		<a href="#homes" class="nav-btn">
+			<svg>
+				<use xlink:href="./src/img/sprite.svg#icon-homes"></use>
+			</svg>
+		</a>
+
+		<a href="#gallery" class="nav-btn">
+			<svg>
+				<use xlink:href="./src/img/sprite.svg#icon-gallery"></use>
+			</svg>
+		</a>
 	</div>
 	<!-- Sidebar Ends -->
 
@@ -122,7 +146,7 @@
 	<!-- Realtors Ends -->
 
 	<!-- Features -->
-	<section class="features">
+	<section id="features" class="features">
 
 		<!-- Feature 1 -->
 		<div class="feature">
@@ -208,7 +232,7 @@
 
 
 	<!-- Story Pictures -->
-	<div class="story__pictures">
+	<div id="stories" class="story__pictures">
 		<img src="./src/img/story-1.jpeg" alt="Couple with new house" class="story__img--1">
 		<img src="./src/img/story-2.jpeg" alt="New house" class="story__img--2">
 	</div>
@@ -229,10 +253,10 @@
 	<!-- Story Content Ends -->
 
 	<!-- Homes -->
-	<section class="homes">
+	<section id="homes" class="homes">
 
 		<!-- Home 1 -->
-		<div class="home">
+		<div class="home" data-realtor-name="Denny" data-realtor-number="+1 (206) 606-0000">
 			<img src="./src/img/house-1.jpeg" alt="House 1" class="home__img">
 			<svg class="home__like">
 				<use xlink:href="./src/img/sprite.svg#icon-heart-full"></use>
@@ -273,7 +297,7 @@
 		</div>
 
 		<!-- Home 2 -->
-		<div class="home">
+		<div class="home" data-realtor-name="Denny" data-realtor-number="+1 (206) 606-0000">
 			<img src="./src/img/house-2.jpeg" alt="House 2" class="home__img">
 			<svg class="home__like">
 				<use xlink:href="./src/img/sprite.svg#icon-heart-full"></use>
@@ -307,7 +331,7 @@
 		</div>
 
 		<!-- Home 3 -->
-		<div class="home">
+		<div class="home" data-realtor-name="Denny" data-realtor-number="+1 (206) 606-0000">
 			<img src="./src/img/house-3.jpeg" alt="House 3" class="home__img">
 			<svg class="home__like">
 				<use xlink:href="./src/img/sprite.svg#icon-heart-full"></use>
@@ -341,7 +365,7 @@
 		</div>
 
 		<!-- Home 4 -->
-		<div class="home">
+		<div class="home" data-realtor-name="Denny" data-realtor-number="+1 (206) 606-0000">
 			<img src="./src/img/house-4.jpeg" alt="House 4" class="home__img">
 			<svg class="home__like">
 				<use xlink:href="./src/img/sprite.svg#icon-heart-full"></use>
@@ -375,7 +399,7 @@
 		</div>
 
 		<!-- Home 5 -->
-		<div class="home">
+		<div class="home" data-realtor-name="Denny" data-realtor-number="+1 (206) 606-0000">
 			<img src="./src/img/house-5.jpeg" alt="House 5" class="home__img">
 			<svg class="home__like">
 				<use xlink:href="./src/img/sprite.svg#icon-heart-full"></use>
@@ -409,7 +433,7 @@
 		</div>
 
 		<!-- Home 6 -->
-		<div class="home">
+		<div class="home" data-realtor-name="Denny" data-realtor-number="+1 (206) 606-0000">
 			<img src="./src/img/house-6.jpeg" alt="House 6" class="home__img">
 			<svg class="home__like">
 				<use xlink:href="./src/img/sprite.svg#icon-heart-full"></use>
@@ -446,7 +470,7 @@
 	<!-- Homes Ends -->
 
 	<!-- Gallery -->
-	<section class="gallery">
+	<section id="gallery" class="gallery">
 		<figure class="gallery__item gallery__item--1">
 			<img src="/src/img/gal-1.jpeg" alt="Gallery image 1" class="gallery__img">
 		</figure>
