@@ -1,0 +1,51 @@
+.mobile-menu {
+  position: absolute;
+  z-index: 600;
+  left: 50%;
+  top: 50%;
+
+  display: flex;
+  flex-direction: column;
+
+  transform: translate(calc(-50% + 150px), -50%);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s;
+
+  &__link {
+    font-size: 4rem;
+    text-align: center;
+    transform: skewX(-7deg) skewY(-3deg);
+    text-transform: capitalize;
+    margin-bottom: 2.5rem;
+
+    svg {
+      height: 4rem;
+      width: 4rem;
+    }
+  }
+
+  &__close-btn {
+    padding: 0;
+    align-self: center;
+    color: $color-primary;
+    background-color: transparent;
+    display: block;
+    height: 8rem;
+    width: 8rem;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover {
+      transform: scale(1.1);
+      color: $color-primary-dark;
+    }
+  }
+}
+
+.mobile-menu--show {
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.5s 0.25s;
+}

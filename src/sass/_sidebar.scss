@@ -10,8 +10,14 @@
   @media only screen and (max-width: $bp-large) {
     grid-column: 1 / -1;
     grid-row: 1 / 2;
-    justify-content: flex-end;
-    align-items: center;
+    justify-content: center;
+    align-items: flex-end;
+
+    padding-top: 0;
+
+    &::after {
+      display: none;
+    }
   }
 
   &::after {
@@ -19,7 +25,6 @@
     top: 0;
     bottom: 0;
     left: 8rem;
-
     background-color: $color-grey-dark-1;
     position: fixed;
 
@@ -30,16 +35,52 @@
 
   &:hover {
     &::after {
-      content: "";
-      top: 0;
-      bottom: 0;
-      left: 8rem;
-      background-color: $color-grey-dark-1;
-      position: fixed;
-
       width: 8rem;
       opacity: 1;
     }
+  }
+}
+
+.menu-toggle {
+  background-color: transparent;
+  transition: all 0.3s;
+  padding: 1rem;
+  border-radius: 3px;
+  position: relative;
+  margin-right: 1.5rem;
+
+  svg {
+    height: 4rem;
+    width: 4rem;
+    color: $color-grey-light-1;
+  }
+
+  &::after {
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 50%;
+
+    content: "";
+    width: 2rem;
+    height: 2rem;
+    background-color: $color-grey-dark-1;
+    border-radius: (100%);
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, -50%);
+    transition: all 0.5s 0.15s;
+  }
+}
+
+.menu-toggle--show {
+  &::after {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(150);
+    z-index: 500;
+    transition: all 0.5s;
   }
 }
 
@@ -83,12 +124,6 @@
   }
 
   @media only screen and (max-width: $bp-large) {
-    margin-top: 0;
-    margin-right: 2.5rem;
-
-    svg {
-      height: 4rem;
-      width: 4rem;
-    }
+    display: none;
   }
 }
