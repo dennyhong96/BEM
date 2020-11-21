@@ -2,17 +2,18 @@
   "name": "nexter",
   "version": "1.0.0",
   "description": "",
-  "main": "index.html",
+  "default": "index.html",
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html"
+    "build": "parcel build index.html --no-minify --dist-dir ./dist"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "autoprefixer": "^9",
-    "parcel": "^1.12.4",
+    "autoprefixer": "^10.0.2",
+    "parcel": "^2.0.0-beta.1",
+    "postcss": "^8.1.8",
     "sass": "^1.29.0"
   },
   "dependencies": {},
