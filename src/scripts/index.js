@@ -18,6 +18,8 @@ const modalCloseBtn = $(".modal__close-btn");
 const modalActions = $(".modal__actions");
 const contactBtns = $a(".home__btn");
 const sidebar = $(".sidebar");
+const storyPics = $(".story__pictures");
+const storyContent = $(".story__content");
 
 let modalMsgEl;
 
@@ -41,8 +43,31 @@ function init() {
 
   toggleBackToTopBtn();
   showCookiesAlert();
+  elSlideInObserver();
 
   sidebar.addEventListener("click", handleLinkTo);
+}
+
+function elSlideInObserver() {
+  const observer = new IntersectionObserver(
+    function (entries, observer) {
+      console.log(entries);
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("slide-in");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      root: null,
+      threshold: [0.1],
+      rootMargin: "-75px",
+    }
+  );
+
+  observer.observe(storyPics);
+  observer.observe(storyContent);
 }
 
 function handleCloseCookies() {
