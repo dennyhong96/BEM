@@ -2,4 +2,17 @@
   background-color: $color-primary;
   grid-column: sidebar-start / sidebar-end;
   grid-row: 1 / -1;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.nav-btn {
+  background-color: transparent;
+  svg {
+    height: 4rem;
+    width: 4rem;
+    color: $color-grey-dark-1;
+  }
 }
